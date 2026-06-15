@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- BASE:START (managed by Coding Agent — do not edit) -->
+<base href="/nexus-translator/">
+<!-- BASE:END -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+
+<!-- SEO Meta Tags -->
+<title>NEXUS — Universal Translator | Jafear AI</title>
+<meta name="description" content="AI-powered audio transcription and translation into 40+ languages including Arabic, Amharic, Tigrinya, Somali and all major world languages. Powered by Jafear AI." />
+<meta property="og:title" content="NEXUS — Universal Translator | Jafear AI" />
+<meta property="og:description" content="AI-powered audio transcription and translation into 40+ languages including Arabic, Amharic, Tigrinya, Somali and all major world languages. Powered by Jafear AI." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="NEXUS — Universal Translator | Jafear AI" />
+<meta name="twitter:description" content="AI-powered audio transcription and translation into 40+ languages including Arabic, Amharic, Tigrinya, Somali and all major world languages. Powered by Jafear AI." />
+<!-- End SEO Meta Tags -->
+<script data-lp-token-hydrate>
+(function(){try{
+  var slug="lp-mqeg3mbo-20hws";
+  var SK='lp_access_'+slug;
+  var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  var u=new URL(location.href);var found=null;var changed=false;
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{localStorage.setItem(map[p]+slug,v);}catch(e){}u.searchParams.delete(p);changed=true;}});
+  if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug);if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug);}catch(e){return null;}}
+  function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
+  if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
+  if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
+}catch(e){}})();
+</script>
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://app.jafear.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=4849');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='Y8HmDk';
+  var apiBase='https://app.jafear.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    var __pLoc=(document.documentElement.lang||navigator.language||'en');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,locale:__pLoc,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||('Thank you for purchasing '+pName+'.');
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-pay-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var pBtn=document.getElementById('lp-pay-success-btn');
+      if(pBtn){pBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg"></div>
+<div class="g1"></div><div class="g2"></div>
+<div class="wrap">
+<div class="hdr">
+<div class="hex-wrap"><div class="hex">N</div></div>
+<div class="hdr-title">NEXUS</div>
+<div class="hdr-sub">Universal Translation AI &bull; by Jafear</div>
+<div class="hdr-desc">Upload audio or paste text &mdash; instantly translated into 40+ languages</div>
+<div class="pulse-row"><div class="dot"></div>NEURAL ENGINE ONLINE<div class="dot p"></div>CLAUDE SONNET ACTIVE<div class="dot"></div></div>
+</div>
+<div class="ticker-wrap"><div class="ticker-inner" id="ticker"></div></div>
+<div class="card">
+<div class="sec-label">Step 1 &mdash; Choose your input</div>
+<div class="upload-zone" id="drop-zone" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="event.preventDefault();this.classList.remove('over');handleFile(event.dataTransfer.files[0])">
+<div class="uz-inner">
+<div class="ring-wrap"><div class="ring"></div><div class="ring2"></div><div class="ring3"></div><div class="ring-icon"><i class="ti ti-microphone"></i></div></div>
+<div class="uz-title" id="uz-title">Upload Your Audio</div>
+<div class="uz-sub" id="uz-sub">Drag &amp; drop here, or tap a button below</div>
+<div class="wave-bars" id="waves"><div class="bar" style="height:10px"></div><div class="bar" style="height:18px"></div><div class="bar" style="height:24px"></div><div class="bar" style="height:14px"></div><div class="bar" style="height:28px"></div><div class="bar" style="height:20px"></div><div class="bar" style="height:12px"></div></div>
+<div class="tap-btns">
+<div class="tap-btn" onclick="document.getElementById('file-pc').click()"><i class="ti ti-device-laptop"></i><span class="tap-big">From PC / Mac</span><span class="tap-small">Browse files</span></div>
+<div class="tap-btn phone-btn" onclick="document.getElementById('file-phone').click()"><i class="ti ti-device-mobile"></i><span class="tap-big">From Phone</span><span class="tap-small">Gallery &bull; Voice memos</span></div>
+</div>
+<div class="drag-hint"><i class="ti ti-drag-drop" style="font-size:13px;vertical-align:-1px"></i> &nbsp;Drag &amp; drop also works &mdash; MP3 &bull; WAV &bull; M4A &bull; OGG &bull; FLAC &bull; Max 20MB</div>
+</div></div>
+<input type="file" id="file-pc" accept="audio/*" onchange="handleFile(this.files[0])">
+<input type="file" id="file-phone" accept="audio/*" capture="environment" onchange="handleFile(this.files[0])">
+<div class="file-info" id="file-info"><i class="ti ti-file-music fi-icon"></i><div class="fi-details"><div class="fi-name" id="fi-name"></div><div class="fi-meta" id="fi-meta"></div></div><button class="fi-clear" onclick="clearFile()">&times;</button></div>
+<div class="or-div">OR TYPE / PASTE Z����/div>
+<textarea id="src-text" placeholder="Type or paste text here to translate without audio..."></textarea>
+</div>
+<div class="card">
+<div class="lang-top"><div class="sec-label" style="margin:0;flex:1">Step 2 &mdash; Target Languages</div><span class="sel-count" id="sel-count">11 selected</span></div>
+<div class="ctrl-btns" style="margin-bottom:.85rem"><button class="ctrl-btn" onclick="selAll()">ABL</button><button class="ctrl-btn" onclick="selNone()">NONE</button><button class="ctrl-btn" onclick="selFeat()">FEATURED</button></div>
+<div class="lang-grid" id="lang-grid"></div>
+</div>
+<button class="go-btn" id="go-btn" onclick="go()"><div class="shim"></div><i class="ti ti-planet" style="font-size:18px;vertical-align:-2px"></i>&nbsp;&nbsp;Translate Now</button>
+<div class="prog-wrap" id="prog-wrap"><div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div><div class="prog-msg" id="prog-msg">Initializing NEXUS...</div></div>
+<div class="results" id="results"><div class="res-hdr"><span class="res-title"><i class="ti ti-language" style="font-size:14px;vertical-align:-2px"></i> Translation Output</span><button class="copy-all" onclick="copyAll()">COPY ALL</button></div><div class="res-card" id="src-out-card" style="display:none"><div class="res-top"><span class="rflag">🔊<&�pan><span class="rlang">TRACSRIPTION &bull; SOURCE</span></div><div class="rtext" id="src-out-text"></div></div><div id="trans-out"></div></div>
+<div class="agent-sec"><div class="agent-label"><i class="ti ti-robot" style="font-size:14px"></i>&nbsp;Live Agent Chat &mdash; Ask NEXUS aything</div><div class="agent-frame-wrap"><iframe src="https://app.jafear.com/agents/91544325/embed" frameborder="0" style="width:100%;height:540px;border:none;border-radius:18px;" title="NEXUS Translation Agent"></iframe></div></div>
+<div class="footer-sig">Powered by <span>JAFEAR AI</span> &bull; NEXUS v1.0 &bull; Agent <span>91544325</span> &bull; &copy; 2025 Jafear.com LLC</div>
+</div>
+<script>
+const LANGS=[{code:'ar',name:'Arabic',flag:'🇸🇦',feat:true,rtl:true},{code:'am',name:'Amharic',flag:'🇪🇹',feat:true,rtl:false},{code:'ti', name:'Tigrinya',flag:'🇪🇷',0feat:true,rtl:false},{code:'so', name:'Somali',flag:'🇸🇴',feat:true,rtl:false},{code:'om', name:'Oromo',flag:'🇪🇹',0feat:true,rtl:false},{code:'en',name:'English',flag:'🇺🇸',feat:true,rtl:false},{code:'fr',name:'French',flag:'🇫🇷',feat:true,rtl:false},{code:'es',name:'Spanish',flag:'🇪🇸',feat:true,rtl:false},{code:'sw',name:'Swahili',flag:'🇰🇪',feat:true,rtl:false},{code:'ha',name:'Hausa',flag:'🇳🇬',feat:true,rtl:false},{code:'ur', name:'Urdu',flag:'🇵🇰',feat:true,rtl:true},{code:'yo', name:'Yoruba',flag:'🇳🇬',feat:false,rtl:false},{code:'ig',name:'Igbo',flag:'🇳🇬',feat:false,rtl:false},{code:'zu',name:'Zulu',flag:'🇿🇦',feat:false,rtl:false},{code:'af',name:'Afrikaans',flag:'🇿🇦',feat:false,rtl:false},{code:'he',name:'Hebrew',flag:'🇮🇱',feat:false,rtl:true},{code:'fa',name:'Persian',flag:'🇮🇷',0feat:false,rtl:true},{code:'tr', name:'Turkish',flag:'🇹🇷',feat:false,rtl:false},{code:'de',name:'German',flag:'🇩🇪',feat:false,rtl:false},{code:'it',name:'Italian',flag:'🇮🇹',0feat:false,rtl:false},{code:'pt',name:'Portuguese',flag:'🇧🇷',feat:false,rtl:false},{code:'ru',name:'Russian',flag:'🇷🇺',feat:false,rtl:false},{code:'pl',name:'Polish',flag:'🇵🇱',feat:false,rtl:false},{code:'nl',name:'Dutch',flag:'🇳🇱',feat:false,rtl:false},{code:'sv',name:'Swedish',flag:'🇸🇪',feat:false,rtl:false},{code:'uk',name:'Ukrainian',flag:'🇺🇦',feat:false,rtl:false},{code:'el',name:'Greek',flag:'🇬🇷',feat:false,rtl:false},{code:'ro',name:'Romanian',flag:'🇷🇴',feat:false,rtl:false},{code:'z', name:'Mandarin',flag:'🇨🇳',0feat:false,rtl:false},{code:'ja',name:'Japanese',flag:'🇯🇵',0feat:false,rtl:false},{code:'ko',name:'Korean',flag:'🇰🇷',feat:false,rtl:false},{code:'hi',name:'Hindi',flag:'🇮🇳',0feat:false,rtl:false},{code:'bn',name:'Bengani',flag:'🇧🇩',feat:false,rtl:false},{code:'th',name:'Thai',flag:'🇹🇭',0feat:false,rtl:false},{code:'vi',name:'Vietnamese',flag:'🇻🇳',feat:false,rtl:false},{code:'id',name:'Indonesian',flag:'🇮🇩',0feat:false,rtl:false},{code:'ms',name:'Malay',flag:'🇲🇾',0feat:false,rtl:false},{code:'tl',name:'Tagalog',flag:'🇵🇭',feat:false,rtl:false},{code:'fi',name:'Finnish',flag:'🇫🇮',0feat:false,rtl:false},{code:'no',name:'Norwegian',flag:'🇳🇴',feat:false,rtl:false},{code:'ht',name:'Haitian Cre ',flag:'🇭🇹',feat:false,rtl:false},{code:'sid',name:'Sidama',flag:'🇪🇹',feat:false,rtl:false}];
+let sel=new Set(['ar','am','ti','so','en','fr','es','sw','ha','ur','om']);
+let file=null,allT={};
+function buildGrid(){const g=document.getElementById('lang-grid');g.innerHTML= �$�LANGS.forEach(l=>{const d=document.createElement('div');d.className='lang-chip'+(l.feat?' feat':'')+(sel.has(l.code)?' sel':'');d.dataset.code=l.code;d.innerHTML=`<span class="lfo3�ڝ�&Ӗ�ȏ�\��[�N�Z[�[Z^�N�[��H�[��X�\H�]KX��OH�����_H�H��[X�Y��[�\����JH
