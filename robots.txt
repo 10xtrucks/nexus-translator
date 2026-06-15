@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://10xtrucks.github.io/nexus-translator/sitemap.xml
