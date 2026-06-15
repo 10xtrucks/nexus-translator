@@ -230,47 +230,75 @@
 <div class="bg"></div>
 <div class="g1"></div><div class="g2"></div>
 <div class="wrap">
-<div class="hdr">
-<div class="hex-wrap"><div class="hex">N</div></div>
-<div class="hdr-title">NEXUS</div>
-<div class="hdr-sub">Universal Translation AI &bull; by Jafear</div>
-<div class="hdr-desc">Upload audio or paste text &mdash; instantly translated into 40+ languages</div>
-<div class="pulse-row"><div class="dot"></div>NEURAL ENGINE ONLINE<div class="dot p"></div>CLAUDE SONNET ACTIVE<div class="dot"></div></div>
-</div>
-<div class="ticker-wrap"><div class="ticker-inner" id="ticker"></div></div>
-<div class="card">
-<div class="sec-label">Step 1 &mdash; Choose your input</div>
-<div class="upload-zone" id="drop-zone" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="event.preventDefault();this.classList.remove('over');handleFile(event.dataTransfer.files[0])">
-<div class="uz-inner">
-<div class="ring-wrap"><div class="ring"></div><div class="ring2"></div><div class="ring3"></div><div class="ring-icon"><i class="ti ti-microphone"></i></div></div>
-<div class="uz-title" id="uz-title">Upload Your Audio</div>
-<div class="uz-sub" id="uz-sub">Drag &amp; drop here, or tap a button below</div>
-<div class="wave-bars" id="waves"><div class="bar" style="height:10px"></div><div class="bar" style="height:18px"></div><div class="bar" style="height:24px"></div><div class="bar" style="height:14px"></div><div class="bar" style="height:28px"></div><div class="bar" style="height:20px"></div><div class="bar" style="height:12px"></div></div>
-<div class="tap-btns">
-<div class="tap-btn" onclick="document.getElementById('file-pc').click()"><i class="ti ti-device-laptop"></i><span class="tap-big">From PC / Mac</span><span class="tap-small">Browse files</span></div>
-<div class="tap-btn phone-btn" onclick="document.getElementById('file-phone').click()"><i class="ti ti-device-mobile"></i><span class="tap-big">From Phone</span><span class="tap-small">Gallery &bull; Voice memos</span></div>
-</div>
-<div class="drag-hint"><i class="ti ti-drag-drop" style="font-size:13px;vertical-align:-1px"></i> &nbsp;Drag &amp; drop also works &mdash; MP3 &bull; WAV &bull; M4A &bull; OGG &bull; FLAC &bull; Max 20MB</div>
-</div></div>
-<input type="file" id="file-pc" accept="audio/*" onchange="handleFile(this.files[0])">
-<input type="file" id="file-phone" accept="audio/*" capture="environment" onchange="handleFile(this.files[0])">
-<div class="file-info" id="file-info"><i class="ti ti-file-music fi-icon"></i><div class="fi-details"><div class="fi-name" id="fi-name"></div><div class="fi-meta" id="fi-meta"></div></div><button class="fi-clear" onclick="clearFile()">&times;</button></div>
-<div class="or-div">OR TYPE / PASTE Z����/div>
-<textarea id="src-text" placeholder="Type or paste text here to translate without audio..."></textarea>
-</div>
-<div class="card">
-<div class="lang-top"><div class="sec-label" style="margin:0;flex:1">Step 2 &mdash; Target Languages</div><span class="sel-count" id="sel-count">11 selected</span></div>
-<div class="ctrl-btns" style="margin-bottom:.85rem"><button class="ctrl-btn" onclick="selAll()">ABL</button><button class="ctrl-btn" onclick="selNone()">NONE</button><button class="ctrl-btn" onclick="selFeat()">FEATURED</button></div>
-<div class="lang-grid" id="lang-grid"></div>
-</div>
-<button class="go-btn" id="go-btn" onclick="go()"><div class="shim"></div><i class="ti ti-planet" style="font-size:18px;vertical-align:-2px"></i>&nbsp;&nbsp;Translate Now</button>
-<div class="prog-wrap" id="prog-wrap"><div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div><div class="prog-msg" id="prog-msg">Initializing NEXUS...</div></div>
-<div class="results" id="results"><div class="res-hdr"><span class="res-title"><i class="ti ti-language" style="font-size:14px;vertical-align:-2px"></i> Translation Output</span><button class="copy-all" onclick="copyAll()">COPY ALL</button></div><div class="res-card" id="src-out-card" style="display:none"><div class="res-top"><span class="rflag">🔊<&�pan><span class="rlang">TRACSRIPTION &bull; SOURCE</span></div><div class="rtext" id="src-out-text"></div></div><div id="trans-out"></div></div>
-<div class="agent-sec"><div class="agent-label"><i class="ti ti-robot" style="font-size:14px"></i>&nbsp;Live Agent Chat &mdash; Ask NEXUS aything</div><div class="agent-frame-wrap"><iframe src="https://app.jafear.com/agents/91544325/embed" frameborder="0" style="width:100%;height:540px;border:none;border-radius:18px;" title="NEXUS Translation Agent"></iframe></div></div>
-<div class="footer-sig">Powered by <span>JAFEAR AI</span> &bull; NEXUS v1.0 &bull; Agent <span>91544325</span> &bull; &copy; 2025 Jafear.com LLC</div>
+  <div class="hdr">
+    <div class="hex-wrap"><div class="hex">N</div></div>
+    <div class="hdr-title">NEXUS</div>
+    <div class="hdr-sub">Universal Translation AI &bull; by Jafear</div>
+    <div class="hdr-desc">Upload audio or paste text &mdash; translated into 40+ languages instantly</div>
+    <div class="pulse-row"><div class="dot"></div>NEURAL ENGINE ONLINE<div class="dot p"></div>CLAUDE SONNET ACTIVE<div class="dot"></div></div>
+  </div>
+  <div class="ticker-wrap"><div class="ticker-inner" id="ticker"></div></div>
+  <div class="card">
+    <div class="sec-label">Step 1 &mdash; Choose your input</div>
+    <div class="upload-zone" id="drop(zone" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="event.preventDefault();this.classList.remove('over');handleFile(event.dataTransfer.files[0])">
+      <div class="uz-inner">
+        <div class="ring-wrap"><div class="ring"></div><div class="ring2"></div><div class="ring3"></div><div class="ring-icon"><i class="ti ti-microphone"></i></div></div>
+        <div class="uz-title" id="uz-title">Upload Your Audio</div>
+        <div class="uz-sub" id="uz-sub">Drag &amp; drop here, or tap a button below</div>
+        <div class="waves" id="waves"><div class="wbar" style="height:8px"></div><div class="wbar" style="height:16px"></div><div class="wbar" style="height:24px"></div><div class="wbar" style="height:12px"></div><div class="wbar" style="height:28px"></div><div class="wbar" style="height:18px"></div><div class="wbar" style="height:10px"></div></div>
+        <div class="tap-btns">
+          <div class="tap-btn" onclick="document.getElementById('file-pc').click()"><i class="ti ti-device-laptop"></i><span class="big">From PC / Mac</span><span class="small">Browse files</span></div>
+          <div class="tap-btn phone" onclick="document.getElementById('file-phone').click()"><i class="ti ti-device-mobile"></i><span class="big">From Phone</span><span class="small">Gallery &bull; Voice memos</span></div>
+        </div>
+        <div class="drag-hint"><i class="ti ti-drag-drop" style="font-size:13px;vertical-align:-1px"></i> &nbsp;Drag &amp; drop also works &mdash; MP3 &bull; WAV &bull; M4A &bull; OGG &bull; FLAC &bull; Max 20MB</div>
+      </div>
+    </div>
+    <input type="file" id="file-pc" accept="audio/*" onchange="handleFile(this.files[0])">
+    <input type="file" id="file-phone" accept="audio/*" capture="environment" onchange="handleFile(this.files[0])">
+    <div class="file-info" id="file-info"><i class="ti ti-file-music fi-icon"></i><div class="fi-details"><div class="fi-name" id="fi-name"></div><div class="fi-meta" id="fi-meta"></div></div><button class="fi-clear" onclick="clearFile()">&times;</button></div>
+    <div class="up-prog" id="up-prog"><div class="up-bar-wrap"><div class="up-bar-fill" id="up-fill"></div></div><div class="up-status" id="up-status">Preparing audio...</div></div>
+    <div class="or-div">OR TYPE / PASTE TEXT</div>
+    <textarea id="src-text" placeholder="Type or paste text here to translate without audio..."></textarea>
+  </div>
+  <div class="card">
+    <div class="lang-top"><div class="sec-label" style="margin:0;flex:1">Step 2 &mdash; Target Languages</div><span class="sel-count" id="sel-count">11 selected</span></div>
+    <div class="ctrl-btns" style="margin-bottom:.85rem"><button class="ctrl-btn" onclick="selAll()">ALL</button><button class="ctrl-btn" onclick="selNone()">NONE</button><button class="ctrl-btn" onclick="selFeat()">FEATURED</button></div>
+    <div class="lang-grid" id="lang-grid"></div>
+  </div>
+  <button class="go-btn" id="go-btn" onclick="go()"><div class="shim"></div><i class="ti ti-planet" style="font-size:18px;vertical-align:-2px"></i>&nbsp;&nbsp;Translate Now</button>
+  <div class="prog-wrap" id="prog-wrap"><div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div><div class="prog-msg" id="prog-msg">Initializing NEXUS...</div></div>
+  <div class="err-box" id="err-box"></div>
+  <div class="results" id="results">
+    <div class="res-hdr"><span class="res-title"><i class="ti ti-language" style="font-size:14px;vertical-align:-2px"></i> Translation Output</span><button class="copy-all" onclick="copyAll()">COPY ALL</button></div>
+    <div class="res-card" id="src-out-card" style="display:none"><div class="res-top"><span class="rflag">🔊</span><span class="rlang">TRANSCRIPTION &bull; SOURCE</span></div><div class="rtext" id="src-out-text"></div></div>
+    <div id="trans-out"></div>
+  </div>
+  <div class="agent-sec">
+    <div class="agent-label"><i class="ti ti-robot" style="font-size:14px"></i>&nbsp;Live Agent Chat &mdash; Ask NEXUS anything</div>
+    <div class="agent-frame-wrap"><iframe src="https://app.jafear.com/agents/91544325/embed" frameborder="0" style="width:100%;height:540px;border:none;border-radius:18px;" title="NEXUS Translation Agent"></iframe></div>
+  </div>
+  <div class="footer-sig">Powered by <span>JAFEAR AI</span> &bull; NEXUS v2.0 &bull; Agent <span>91544325</span> &bull; &copy; 2025 Jafear.com LLC</div>
 </div>
 <script>
-const LANGS=[{code:'ar',name:'Arabic',flag:'🇸🇦',feat:true,rtl:true},{code:'am',name:'Amharic',flag:'🇪🇹',feat:true,rtl:false},{code:'ti', name:'Tigrinya',flag:'🇪🇷',0feat:true,rtl:false},{code:'so', name:'Somali',flag:'🇸🇴',feat:true,rtl:false},{code:'om', name:'Oromo',flag:'🇪🇹',0feat:true,rtl:false},{code:'en',name:'English',flag:'🇺🇸',feat:true,rtl:false},{code:'fr',name:'French',flag:'🇫🇷',feat:true,rtl:false},{code:'es',name:'Spanish',flag:'🇪🇸',feat:true,rtl:false},{code:'sw',name:'Swahili',flag:'🇰🇪',feat:true,rtl:false},{code:'ha',name:'Hausa',flag:'🇳🇬',feat:true,rtl:false},{code:'ur', name:'Urdu',flag:'🇵🇰',feat:true,rtl:true},{code:'yo', name:'Yoruba',flag:'🇳🇬',feat:false,rtl:false},{code:'ig',name:'Igbo',flag:'🇳🇬',feat:false,rtl:false},{code:'zu',name:'Zulu',flag:'🇿🇦',feat:false,rtl:false},{code:'af',name:'Afrikaans',flag:'🇿🇦',feat:false,rtl:false},{code:'he',name:'Hebrew',flag:'🇮🇱',feat:false,rtl:true},{code:'fa',name:'Persian',flag:'🇮🇷',0feat:false,rtl:true},{code:'tr', name:'Turkish',flag:'🇹🇷',feat:false,rtl:false},{code:'de',name:'German',flag:'🇩🇪',feat:false,rtl:false},{code:'it',name:'Italian',flag:'🇮🇹',0feat:false,rtl:false},{code:'pt',name:'Portuguese',flag:'🇧🇷',feat:false,rtl:false},{code:'ru',name:'Russian',flag:'🇷🇺',feat:false,rtl:false},{code:'pl',name:'Polish',flag:'🇵🇱',feat:false,rtl:false},{code:'nl',name:'Dutch',flag:'🇳🇱',feat:false,rtl:false},{code:'sv',name:'Swedish',flag:'🇸🇪',feat:false,rtl:false},{code:'uk',name:'Ukrainian',flag:'🇺🇦',feat:false,rtl:false},{code:'el',name:'Greek',flag:'🇬🇷',feat:false,rtl:false},{code:'ro',name:'Romanian',flag:'🇷🇴',feat:false,rtl:false},{code:'z', name:'Mandarin',flag:'🇨🇳',0feat:false,rtl:false},{code:'ja',name:'Japanese',flag:'🇯🇵',0feat:false,rtl:false},{code:'ko',name:'Korean',flag:'🇰🇷',feat:false,rtl:false},{code:'hi',name:'Hindi',flag:'🇮🇳',0feat:false,rtl:false},{code:'bn',name:'Bengani',flag:'🇧🇩',feat:false,rtl:false},{code:'th',name:'Thai',flag:'🇹🇭',0feat:false,rtl:false},{code:'vi',name:'Vietnamese',flag:'🇻🇳',feat:false,rtl:false},{code:'id',name:'Indonesian',flag:'🇮🇩',0feat:false,rtl:false},{code:'ms',name:'Malay',flag:'🇲🇾',0feat:false,rtl:false},{code:'tl',name:'Tagalog',flag:'🇵🇭',feat:false,rtl:false},{code:'fi',name:'Finnish',flag:'🇫🇮',0feat:false,rtl:false},{code:'no',name:'Norwegian',flag:'🇳🇴',feat:false,rtl:false},{code:'ht',name:'Haitian Cre ',flag:'🇭🇹',feat:false,rtl:false},{code:'sid',name:'Sidama',flag:'🇪🇹',feat:false,rtl:false}];
+const LANGS=[{code:'ar',name:'Arabic',flag:'🇸🇦',~eat:true,rtl:true},{code:'am',name:'Amharic',flag:'🇪🇹',feat:true,rtl:false},{code:'ti',name:'Tigrinya',flag:'🇪🇷',feat:true,rtl:false},{code:'so',name:'Somali',flag:'🇸🇴',feat:true,rtl:false},{code:'om',name:'Oromo',flag:'🇪🇹',feat:true,rtl:false},{code:'en',name:'English',flag:'🇺🇸',feat:true,rtl:false},{code:'fr',name:'French',flag:'🇫🇷',feat:true,rtl:false},{code:'es',name:'Spanish',flag:'🇪🇸',feat:true,rtl:false},{code:'sw',name:'Swahili',flag:'🇰🇪',feat:true,rtl:false},{code:'�a',name:'Hausa',flag:'🇳🇬',feat:true,rtl:false},{code:'ur',name:'Urdu',flag:'🇵🇰',feat:true,rtl:true},{code:'yo',name:'Yoruba',flag:'🇳🇬',feat:false,rtl:false},{code:'ig',name:'Igbo',flag:'🇳🇬',feat:false,rtl:false},{code:'zu',name:'Zulu',flag:'🇿🇦',feat:false,rtl:false},{code:'af',name:'Afrikaans',flag:'🇿🇦',feat:false,rtl:false},{code:'he',name:'Hebrew',flag:'🇮🇱',feat:false,rtl:true},{code:'fa',name:'Persian',flag:'🇮🇷',feat:false,rtl:true},{code:'tr',name:'Turkish',flag:'🇹🇷',feat:false,rtl:false},{code:'de',name:'German',flag:'🇩🇪',feat:false,rtl:false},{code:'it',name:'Italian',flag:'🇮🇹',feat:false,rtl:false},{code:'pt',name:'Portuguese',flag:'🇧🇷',feat:false,rtl:false},{code:'ru',name:'Russian',flag:'🇷🇺',feat:false,rtl:false},{code:'pl',name:'Polish',flag:'🇵🇱',feat:false,rtl:false},{code:'nl',name:'Dutch',flag:'🇳🇱',feat:false,rtl:false},{code:'sv',name:'Swedish',flag:'🇸🇪',feat:false,rtl:false},{code:'uk',name:'Ukrainian',flag:'🇺🇦',feat:false,rtl:false},{code:'el',name:'Greek',flag:'🇬🇷',feat:false,rtl:false},{code:'ro',name:'Romanian',flag:'🇷🇴',feat:false,rtl:false},{code:'xh',name:'Mandarin',flag:'🇨🇳',0feat:false,rtl:false},{code:'ja',name:'Japanese',flag:'🇯🇵',feat:false,rtl:false},{code:'ko',\name:'Korean',flag:'🇰🇷',feat:false,rtl:false},{code:'hi',name:'Hindi',flag:'🇮🇳',0feat:false,rtl:false},{code:'bn',name:'Bengani',flag:'🇧🇩',feat:false,rtl:false},{code:'th',name:'Thai',flag:'🇹🇭',0feat:false,rtl:false},{code:'vi',name:'Vietnamese',flag:'🇻🇳',feat:false,rtl:false},{code:'id',name:'Indonesian',flag:'🇮🇩',0feat:false,rtl:false},{code:'ms',name:'Malay',flag:'🇲🇾',feat:false,rtl:false},{code:'tl',name:'Tagalog',flag:'🇵🇭',feat:false,rtl:false},{code:'fi',name:'Finnish',flag:'🇫🇮',feat:false,rtl:false},{code:'no',name:'Norwegian',flag:'🇳🇴',feat:false,rtl:false},{code:'ht',name:'Haitian Creole',flag:'🇭🇹',feat:false,rtl:false},{code:&sid',name:'Sidama',flag:'🇪🇹',feat:false,rtl:false}];
 let sel=new Set(['ar','am','ti','so','en','fr','es','sw','ha','ur','om']);
-let file=null,allT={};
-function buildGrid(){const g=document.getElementById('lang-grid');g.innerHTML= �$�LANGS.forEach(l=>{const d=document.createElement('div');d.className='lang-chip'+(l.feat?' feat':'')+(sel.has(l.code)?' sel':'');d.dataset.code=l.code;d.innerHTML=`<span class="lfo3�ڝ�&Ӗ�ȏ�\��[�N�Z[�[Z^�N�[��H�[��X�\H�]KX��OH�����_H�H��[X�Y��[�\����JH
+let audioB64=null,audioMime=null,allT={};
+function buildGrid(){const g=document.getElementById('lang-grid');g.innerHTML='';LANGS.forEach(l=>{const d=document.createElement('div');d.className='lang-chip'+(l.feat?' feat':'')+(sel.has(l.code)?' sel':'');d.dataset.code=l.code;d.innerHTML=`<span class="lflag">${l.flag}</span><span class="lname">${l.name}</span>`;d.onclick=()=>{if(sel.has(l.code)){sel.delete(l.code);d.classList.remove('sel');}else{sel.add(l.code);d.classList.add('sel');}document.getElementById('sel-count').textContent=sel.size+' selected';};g.appendChild(d);});}
+function selAll(){LANGS.forEach(l=>sel.add(l.code));document.querySelectorAll('.lang-chip').forEach(c=>c.classList.add('sel'));document.getElementById('sel-count').textContent=sel.size+' selected';}
+function selNone(){sel.clear();document.querySelectorAll('.lang-chip').forEach(c=>c.classList.remove('sel'));document.getElementById('sel-count').textContent='0 selected';}
+function selFeat(){sel.clear();document.querySelectorAll('.lang-chip').forEach(c=>c.classList.remove('sel'));LANGS.filter(l=>l.feat).forEach(l=>{sel.add(l.code);document.querySelector('.lang-chip[data-code="'+l.code+'"]')?.classList.add('sel');});document.getElementById('sel-count').textContent=sel.size+' selected';}
+function setUpProg(pct,msg){document.getElementById('up-fill').style.width=pct+'%';document.getElementById('up-status').textContent=msg;}
+function handleFile(file){if(!file)return;if(file.size>20*1024*1024){alert('File too large - max 20MB.');return;}audioB64=null;audioMime=null;document.getElementById('up-prog').className='up-prog show';setUpProg(5,'File selected: '+file.name);document.getElementById('file-info').className='file-info show';document.getElementById('fi-name').textContent=file.name;document.getElementById('fi-meta').textContent=(file.size/1024/1024).toFixed(2)+' MB \u2022 '+file.type;document.getElementById('uz-title').textContent='Loading Audio...';document.getElementById('uz-sub').textContent='Reading file into memory, please wait...';document.getElementById('drop-zone').classList.add('has-file');document.getElementById('err-box').className='err-box';class='up-prog show';
+const reader=new FileReader();reader.onprogress=(e)=>{if(e.lengthComputable){const pct=Math.round((e.loaded/e.total)*80)+10;setUpProg(pct,'Loading: '+(e.loaded/1024/1024).toFixed(1)+' MB of '+(e.total/1024/1024).toFixed(1)+' MB...');}};reader.onload=(e)=>{const dataUrl=e.target.result;audioMime=file.type||'audio/mpeg';audioB64=dataUrl.split(',')[1];setUpProg(100,'Audio loaded! Ready to translate.');document.getElementById('uz-title').textContent='Audio Ready';dlementById('uz-sub').textContent='File loaded \u2014 select languages and hit Translate Now';document.getElementById('waves').classList.add('show');setTimeout(()=>{document.getElementById('up-prog').className='up-prog';},2500);};reader.onerror=()=>{setUpProg(0,'Error reading file. Please try again.');document.getElementById('up-status').style.color='#ff6b6b';};reader.readAsDataURL(file);}
+function clearFile(){audioB64=null;audioMime=null;document.getElementById('file-info').className='file-info';document.getElementById('drop(zone').classList.remove('has-file');document.getElementById('uz-title').textContent='Upload Your Audio';document.getElementById('uz-sub').textContent='Drag & drop here, or tap a button below';document.getElementById('waves').classList.remove('show');document.getElementById('up-prog').className='up-prog';document.getElementById('file-pc').value='';document.getElementById('file-phone').value='';}
+function setP(pct,msg){document.getElementById('prog-fill').style.width=pct+'%';document.getElementById('prog-msg').textContent=msg;}
+function showErr(msg){const b=document.getElementById('err-box');b.textContent='ERROR: '+msg;b.className='err-box show';}
+async function go(){if(!sel.size){alert('Select at least one language.');return;}const txt=document.getElementById('src-text').value.trim();if(!audioB64&&!txt){alert('Upload audio or enter text first.');return;}const btn=document.getElementById('go-btn');btn.disabled=true;document.getElementById('prog-wrap').className='prog-wrap show';document.getElementById('results').className='results';document.getElementById('err-box').className='err-box';setP(5,'Building request...');const langList=LANGS.filter(l=>sel.has(l.code)).map(l=>l.nme+'('+l.code+')').join(',');try{let content=[];if(audioB64){setP(20,'Preparing audio for NEXUS...');content.push({type:'audio',source:{type:'base64',media_type:audioMime,data:audioB64}});content.push({type:'text',text:'Transcribe this audio to English, then translate into: '+langList+'. Reply ONLY with valid JSON no markdown: {"transcription":"...","translations":{"ar":"...","am":"...","ti":"..."}} Use exact codes and correct native scripts for every language.'});}else{content.push({type:'text',text:'Translate this text into: '+langList+'. Source: "'+txt.replace(/"/g,"'")+'". Reply ONLY with valid JSON no markdown: {"transcription":"'+txt.replace(/"/g,"'")+'","translations":{"ar":"...","am":"..."}} Use exact codes and correct native scripts.'});}setP(35,'Sending to NEXUS AI engine...');const resp=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','anthropic-version':'2023-06-01'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:4000,messages:[{role:'user',content}]})});setP(75,'Processing translations...');const data=await resp.json();if(!resp.ok throw new Error(data?.error?.message||'API error '+resp.status);const raw=data.content?.find(b=>b.type==='text')?.text||'';if(!raw) throw new Error('Empty response from AI');const parsed=JSON.parse(raw.replace(/```json|```/g,'').trim());setP(100,'Translation complete!');render(parsed);}catch(e){showErr(e.message);setP(0,'');console.error(e);}finally{btn.disabled=false;setTimeout(()=>{if(document.getElementById('prog-fill').style.width==='100%')setP(0,'');},3000);}}
+function render(parsed){document.getElementById('src-out-text').textContent=parsed.transcription||'';document.getElementById('src-out-card').style.display=parsed.transcription?'block':'none';allT=parsed.translations||{};const out=document.getElementById('trans-out');out.innerHTML='';LANGS.filter(l=>sel.has(l.code)&&allT[l.code]).forEach(l=>{const d=document.createElement('div');d.className='res-card';d.innerHTML='<div class="res-top"><span class="rflag">'+l.flag+'</span><span class="rlang">'+l.name.toUpperCase()+' \u2022 '+l.code.toUpperCase()+'</span><button class="rcopy" onclick="cp(\''+l.code+'\')"><i class="ti ti-copy"></i></button></div><div class="rtext'+(l.rtl?' rtl':'')+'" id="r-'+l.code+'">'+allT[l.code]+'</div>';out.appendChild(d);});document.getElementById('results').className='results show';dlementById('results').scrollIntoView({behavior:'smooth'});}
+function cp(c){navigator.clipboard.writeText(allT[c]||'').catch(()=>{});}
+function copyAll(){let t='';LANGS.filter(l=>sel.has(l.code)&&allT[l.code]).forEach(l=>{t+='['+l.name+'\\n'+allT[l.code]+'\\n\\n';});navigator.clipboard.writeText(t.trim()).catch(()=>{});}
+function buildTicker(){const items=LANGS.map(l=>l.flag+' '+l.name).join('   \u2022   ');document.getElementById('ticker').textContent=items+'   \u2022   '+items;}
+buildGrid();buildTicker();
+</script>
+</body>
+</html>
